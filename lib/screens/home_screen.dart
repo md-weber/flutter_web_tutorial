@@ -13,48 +13,81 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-          child: ListView(
-            children: <Widget>[
-              Text(
-                "Welcome on that page!",
-                style: TextStyle(fontSize: 64.0),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                "Thanks for reading the article or watching the video!",
-                style: TextStyle(fontSize: 54.0),
-                textAlign: TextAlign.center,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: FrankLoadingSpinner(
-                  bodyColor: Colors.lightBlue,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Feather.youtube),
-                    color: Color(0xFFFF0000),
-                    onPressed: () {
-                      _launchURL(
-                        "https://www.youtube.com/watch?v=iHIhnALkFj0&list=PLq83k-ITj6lQyw2sCawoRNnSGKZYuuUYh",
-                      );
-                    },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: ListView(
+                    children: <Widget>[
+                      Text(
+                        "Welcome on that page!",
+                        style: TextStyle(fontSize: 64.0),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Thanks for reading the article or watching the video!",
+                        style: TextStyle(fontSize: 54.0),
+                        textAlign: TextAlign.center,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(32.0),
+                        child: FrankLoadingSpinner(
+                          bodyColor: Colors.lightBlue,
+                        ),
+                      ),
+                    ],
                   ),
-                  IconButton(
-                    icon: Icon(Feather.twitter),
-                    color: Colors.lightBlue,
-                    onPressed: () {
-                      _launchURL(
-                        "https://twitter.com/max_myracle",
-                      );
-                    },
-                  )
-                ],
-              )
-            ],
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Feather.youtube),
+                        color: Color(0xFFFF0000),
+                        onPressed: () {
+                          _launchURL(
+                            "https://www.youtube.com/watch?v=iHIhnALkFj0&list=PLq83k-ITj6lQyw2sCawoRNnSGKZYuuUYh",
+                          );
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Feather.twitter),
+                        color: Colors.lightBlue,
+                        onPressed: () {
+                          _launchURL(
+                            "https://twitter.com/max_myracle",
+                          );
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Feather.github),
+                        color: Colors.white,
+                        onPressed: () {
+                          _launchURL(
+                            "https://github.com/md-weber",
+                          );
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Feather.code),
+                        color: Colors.green,
+                        onPressed: () {
+                          _launchURL(
+                            "https://dev.to/myracledesign",
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
